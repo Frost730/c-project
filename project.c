@@ -24,6 +24,11 @@ void displayTotalAccounts();
 void displayAllLogs();
 void displayAccountLog();
 void transfer(); // Function prototype for transferring money
+void clearScreen(); // Prototype for clear screen function
+
+void clearScreen() {
+    system("clear");
+}
 
 void createAccount() {
     struct Account account;
@@ -309,6 +314,7 @@ int main() {
     int choice;
 
     do {
+        clearScreen(); // Clear screen at the start of each loop
         printf("\n===== Bank Management System =====\n");
         printf("1. Create Account\n");
         printf("2. View Account\n");
@@ -353,12 +359,19 @@ int main() {
                 break;
             default:
                 printf("Invalid choice. Please try again.\n");
-                printf(" press enter to contiune.....");
+                printf("Press Enter to continue...");
                 getchar(); // Wait for user input
                 getchar(); // To capture the newline after scanf
         }
+
+        // After each operation, ask the user if they want to continue or return to the menu
+        if (choice >= 1 && choice <= 8) {
+            printf("Press Enter to return to the menu...");
+           // getchar(); // Consume leftover newline
+            getchar(); // Wait for user input
+        }
+
     } while (choice != 9);
 
     return 0;
 }
-
