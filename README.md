@@ -1,6 +1,6 @@
 # c-project
 mini c project ,
-to function this you need to create 2 new txt file named 
+to run this you need to create 2 new txt file named 
 1."account_log.txt",
 2."accounts.dat",
 place this two txt file same folder as project.c file,
